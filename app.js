@@ -35,7 +35,12 @@ const bookkeeper = {
         }
     },
 }
-
+function getMarkPrice(book){
+    const bids = book.bids;
+    const asks = book.asks;
+    const midPrice = (bids[0].price + asks[0].price)/2;
+    return midPrice;
+}
 function updateTheBooks(oldBook, update) {
     let newBook = {
         bids: [],
@@ -165,6 +170,8 @@ function render(book) {
     const htmlBids = htmlBid(book)
     const htmlAsks = htmlAsk(book)
     const rangeData = getRangeData(book)
+    const markPrice = getMarkPrice(book)
+    $("#marketPrice").text(markPrice);
     const htmlRange = {
         bid:htmlBidRange(rangeData),
         ask:htmlAskRange(rangeData),

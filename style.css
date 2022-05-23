@@ -15,13 +15,20 @@
   
 
 
-.float{
-	position:fixed;
-	width:90%;
-	height:50px;
-	bottom:15%;
-	right:5%;
-}
+    .float{
+      position:fixed;
+      width:90%;
+      height:50px;
+      bottom:15%;
+      right:5%;
+    }
+    .float2{
+      position:fixed;
+      width:90%;
+      height:50px;
+      bottom:7.5%;
+      right:5%;
+    }
 
 td {
   font-size: 10px;
