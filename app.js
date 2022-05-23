@@ -171,7 +171,7 @@ function render(book) {
     const htmlAsks = htmlAsk(book)
     const rangeData = getRangeData(book)
     const markPrice = getMarkPrice(book)
-    $("#marketPrice").text(markPrice);
+    $("#marketPrice").text(markPrice.toFixed(2));
     const htmlRange = {
         bid:htmlBidRange(rangeData),
         ask:htmlAskRange(rangeData),
