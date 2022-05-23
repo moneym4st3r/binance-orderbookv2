@@ -201,9 +201,9 @@ function htmlBid(book) {
         html += '<tr>'
         html += '<td>' + formatMoney(book.bids[i].price) + '</td>'
         html += '<td>' + formatMoney(book.bids[i].amount) + '</td>'
+        html += '<td>' + formatMoney(parseFloat(book.bids[i].sumAsset).toFixed(2)) + '</td>'
         html += '<td>' + formatMoney(parseFloat(book.bids[i].total).toFixed(2)) + '</td>'
         html += '<td>' + formatMoney(parseFloat(book.bids[i].sumQuote).toFixed(2)) + '</td>'
-        html += '<td>' + formatMoney(parseFloat(book.bids[i].sumAsset).toFixed(2)) + '</td>'
         html += '</tr>'
     }
     return html
