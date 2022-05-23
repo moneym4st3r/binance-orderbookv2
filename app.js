@@ -182,7 +182,7 @@ function render(book) {
         $("#loadOrderBook").removeClass("btn-primary").removeClass("btn-danger").addClass("btn-success")
         $("#volumeDiff").text(formatMoney(total));
     }else{
-        total = -1*total;
+        total = total;
         $("#loadOrderBook").removeClass("btn-primary").removeClass("btn-success").addClass("btn-danger")
         $("#volumeDiff").text(formatMoney(total));
     }
@@ -202,8 +202,8 @@ function htmlBid(book) {
         html += '<td>' + formatMoney(book.bids[i].price) + '</td>'
         html += '<td>' + formatMoney(book.bids[i].amount) + '</td>'
         html += '<td>' + formatMoney(parseFloat(book.bids[i].total).toFixed(2)) + '</td>'
-        html += '<td>' + formatMoney(parseFloat(book.bids[i].sumAsset).toFixed(2)) + '</td>'
         html += '<td>' + formatMoney(parseFloat(book.bids[i].sumQuote).toFixed(2)) + '</td>'
+        html += '<td>' + formatMoney(parseFloat(book.bids[i].sumAsset).toFixed(2)) + '</td>'
         html += '</tr>'
     }
     return html
@@ -213,8 +213,8 @@ function htmlAsk(book) {
     for (let i = 0; i < book.asks.length; i++) {
         html += '<tr>'
         html += '<td>' + formatMoney(parseFloat(book.asks[i].sumQuote).toFixed(2)) + '</td>'
-        html += '<td>' + formatMoney(parseFloat(book.asks[i].sumAsset).toFixed(2)) + '</td>'
         html += '<td>' + formatMoney(parseFloat(book.asks[i].total).toFixed(2)) + '</td>'
+        html += '<td>' + formatMoney(parseFloat(book.asks[i].sumAsset).toFixed(2)) + '</td>'
         html += '<td>' + formatMoney(book.asks[i].amount) + '</td>'
         html += '<td>' + formatMoney(book.asks[i].price) + '</td>'
         html += '</tr>'
@@ -419,3 +419,13 @@ $(".btn").click(function() {
     $("#settingsModal").modal("show");
 });
 });
+
+
+/*
+todo 
+
+bid
+order = price, amount, totalAmount, currency, totalCurrency 
+ask
+order = totalCurrency, totalAmount, currency, amount, price
+*/
